@@ -17,7 +17,12 @@ type OWMResponse struct {
 		Description string
 	}
 	Main struct {
-		Temp float64
+		Temp      float64
+		FeelsLike float64 `json:"feels_like"`
+		TempMin   float64 `json:"temp_min"`
+		TempMax   float64 `json:"temp_max"`
+		Pressure  float64
+		Humidity  float64
 	}
 }
 
@@ -31,7 +36,7 @@ func LoadKey() string {
 	return apiKey
 }
 
-func GetCity(CITY string, APIKEY string) string {
+func GetCity(CITY string, APIKEY string) OWMResponse {
 	URL := fmt.Sprintf("%s/data/2.5/weather?q=%s&units=metric&appid=%s", baseUrl, CITY, APIKEY)
 	resp, err := http.Get(URL)
 	if err != nil {
@@ -51,6 +56,6 @@ func GetCity(CITY string, APIKEY string) string {
 		log.Fatal(jsonErr)
 	}
 
-	return response.Weather[0].Description
-	//fmt.Println(response.Main.Temp)
+	return response
+
 }
