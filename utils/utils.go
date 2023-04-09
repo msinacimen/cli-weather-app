@@ -36,6 +36,7 @@ func GetCity(CITY string, APIKEY string) string {
 	resp, err := http.Get(URL)
 	if err != nil {
 		log.Fatal(err)
+
 	}
 	defer resp.Body.Close()
 
@@ -53,6 +54,3 @@ func GetCity(CITY string, APIKEY string) string {
 	return response.Weather[0].Description
 	//fmt.Println(response.Main.Temp)
 }
-
-/*body, err := io.ReadAll(resp.Body)
-fmt.Printf("%d", body)*/

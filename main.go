@@ -1,13 +1,7 @@
 package main
 
-import (
-	"cli-weather-app/utils"
-	"fmt"
-)
+import "cli-weather-app/cmd"
 
 func main() {
-	//cmd.Execute()
-	city := "New York"
-	rtr := utils.GetCity(city, utils.LoadKey())
-	fmt.Printf("%s", rtr)
+	cmd.Execute()
 }
