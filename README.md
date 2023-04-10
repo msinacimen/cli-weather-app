@@ -2,6 +2,9 @@
 
 CLI tool for getting weather information from OpenWeatherMap API with Golang - Cobra.
 
+![](https://github.com/msinacimen/cli-weather-app/blob/main/weather_app.gif)
+
+
 ```
 Weather App that shows the weather of a city in the world
 
@@ -9,7 +12,7 @@ Usage:
   wcli [command]
 
 Available Commands:
-  city        Get temperature of a city
+  city        Get weather of a city
   help        Help about any command
   version     Print the version number of wcli
 
