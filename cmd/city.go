@@ -17,7 +17,7 @@ var cityName string
 // cityCmd represents the city command
 var cityCmd = &cobra.Command{
 	Use:     "city",
-	Short:   "Get temperature of a city",
+	Short:   "Get weather of a city",
 	Long:    `This command fetches the temperature from the openWeatherMap API.`,
 	Version: "0.1.0",
 	Example: `wcli city <CITY_NAME>`,
